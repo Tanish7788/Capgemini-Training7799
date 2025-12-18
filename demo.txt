@@ -320,3 +320,241 @@ Occurs due to wrong GitHub account or missing permission.
 ✔ Remote connected
 ✔ Authentication fixed
 ✔ Code successfully pushed 🎉
+
+
+
+
+now i ahve made changes in the demo folder i have uploaded how can i kniow if changes made have been uploaded and what what changes are made
+
+Perfect question — this is core Git understanding 👍
+I’ll explain exactly how to know:
+
+What changes you made locally
+
+Whether those changes are uploaded to GitHub
+
+What commands show what
+
+🧠 1️⃣ See WHAT changes you made (local)
+🔹 Check file status
+git status
+
+
+Possible outputs:
+
+✅ If you see:
+modified: demo.txt
+
+
+👉 File changed but NOT uploaded yet
+
+✅ If you see:
+nothing to commit, working tree clean
+
+
+👉 No pending local changes
+
+🔹 See exact changes (line by line)
+git diff
+
+
+📌 Shows:
+
+- removed lines
+
++ added lines
+
+Example:
+
+- Hello
++ Hello Git
+
+🧠 2️⃣ Check what is READY to be uploaded
+🔹 After staging
+git add demo.txt
+
+
+Check:
+
+git status
+
+
+You’ll see:
+
+Changes to be committed:
+  modified: demo.txt
+
+🔹 See staged changes only
+git diff --staged
+
+🧠 3️⃣ Check what HAS ALREADY been uploaded
+🔹 View commit history
+git log --oneline
+
+
+Example:
+
+a050e1b add demo file
+
+
+If you made a new commit, it will appear here.
+
+🔍 Check if local and GitHub are in sync
+git status
+
+
+If you see:
+
+Your branch is up to date with 'origin/main'
+
+
+👉 ✅ Changes are uploaded
+
+If you see:
+
+Your branch is ahead of 'origin/main' by 1 commit
+
+
+👉 ❌ Not uploaded yet
+
+🧠 4️⃣ See what changes were uploaded to GitHub
+🔹 Compare local vs remote
+git log origin/main..HEAD --oneline
+
+
+Shows commits not yet pushed
+
+🔹 See last uploaded commit details
+git show
+
+🧠 5️⃣ Confirm on GitHub (visual check)
+
+Open your GitHub repo in browser
+
+Go to Commits
+
+Click latest commit
+
+GitHub shows:
+
+Files changed
+
+Lines added/removed
+
+🚀 6️⃣ Upload your new changes (complete flow)
+git status
+git diff
+git add demo.txt
+git commit -m "updated demo file"
+git push origin main
+
+📌 One-line VIVA answer
+
+git status shows whether changes are staged or committed, git diff shows what changes were made, and git log shows whether changes have been pushed to the remote repository.
+
+If you want, tell me:
+
+You changed which file(s)?
+
+Folder or multiple files?
+
+I’ll give you the exact commands for your case 👌
+
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   demo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (main)
+
+Perfect 👍
+Your git status output is very clear. Let me explain exactly what it means and what to do next.
+
+🧠 What your current status means
+On branch main
+Changes not staged for commit:
+        modified: demo.txt
+
+🔍 Interpretation
+
+You edited demo.txt
+
+Git has detected the change
+
+❌ The change is NOT staged
+
+❌ The change is NOT committed
+
+❌ The change is NOT uploaded to GitHub
+
+Right now the change exists only on your local system.
+
+🔎 See exactly WHAT you changed (recommended)
+git diff
+
+
+This will show:
+
+Lines added (+)
+
+Lines removed (-)
+
+✅ To upload these changes to GitHub (step-by-step)
+1️⃣ Stage the file
+git add demo.txt
+
+2️⃣ Confirm it’s staged
+git status
+
+
+You should now see:
+
+Changes to be committed:
+        modified: demo.txt
+
+3️⃣ Commit the change
+git commit -m "updated demo.txt"
+
+4️⃣ Push to GitHub
+git push origin main
+
+🔍 After pushing, confirm upload
+Locally
+git status
+
+
+You should see:
+
+nothing to commit, working tree clean
+Your branch is up to date with 'origin/main'
+
+On GitHub
+
+Open repository
+
+Go to Commits
+
+See latest commit message: updated demo.txt
+
+🧠 Viva-ready explanation
+
+The file demo.txt is modified in the working directory but not staged. After staging with git add, committing with git commit, and pushing with git push, the changes will be uploaded to the remote repository.
+
+🚦 If you want to discard changes instead (not upload)
+git restore demo.txt
+
+
+⚠️ This will undo your edits.
+
+You’re doing great 👍
+If you want, I can now explain:
+
+Difference between working tree / staging / commit
+
+How to check who changed what and when
+
+Git diagrams (very easy)
