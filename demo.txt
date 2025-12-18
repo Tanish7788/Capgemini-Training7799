@@ -1,0 +1,322 @@
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini
+$ gitinit
+bash: gitinit: command not found
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini
+$ git init
+Initialized empty Git repository in C:/Users/91987/Desktop/Capgemini/.git/
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (master)
+$ git add demo.txt
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (master)
+$ git commit demo.txt
+Aborting commit due to empty commit message.
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (master)
+$ git commit -m
+error: switch `m' requires a value
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (master)
+$ git commit -m "add demo file"
+[master (root-commit) a050e1b] add demo file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 demo.txt
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (master)
+$ https://github.com/Tanish7788/Capgemini-Training7799.git
+bash: https://github.com/Tanish7788/Capgemini-Training7799.git: No such file or directory
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (master)
+$ git remote-v
+git: 'remote-v' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote-fd
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (master)
+$ git remote -v
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (master)
+$ git branch -M main
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (main)
+$ pit push -u origin main
+bash: pit: command not found
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (main)
+$ git remote add origin https://github.com/Tanish7788/Capgemini-Training7799
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (main)
+$ git push origin main
+remote: Permission to Tanish7788/Capgemini-Training7799.git denied to Tanish888.
+fatal: unable to access 'https://github.com/Tanish7788/Capgemini-Training7799/': The requested URL returned error: 403
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (main)
+$ git push origin main
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/Tanish7788/Capgemini-Training7799/'
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (main)
+$ git remote ^[[200~git remote set-url origin <NEW_URL>
+bash: syntax error near unexpected token `newline'
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (main)
+$ git remote set-url origin https://github.com/Tanish7788/Capgemini-Training7799
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (main)
+$ git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 212 bytes | 106.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Tanish7788/Capgemini-Training7799
+ * [new branch]      main -> main
+
+91987@TANISH_VICTUS MINGW64 ~/Desktop/Capgemini (main)
+$
+
+
+
+
+
+to change the account I have gone to settings credential manger GitHub account changed
+
+
+
+all explanation
+I’ll explain each command you ran, what it does, why errors came, and why it finally worked — step-by-step, exam / viva ready.
+
+🔁 FULL EXPLANATION OF WHAT HAPPENED
+1️⃣ gitinit ❌
+gitinit
+
+
+Error: command not found
+
+❌ Why?
+
+gitinit is not a Git command
+
+✅ Correct command:
+git init
+
+2️⃣ git init ✅
+git init
+
+
+Output:
+
+Initialized empty Git repository...
+
+✅ What it does:
+
+Creates a .git folder
+
+Converts your folder into a Git repository
+
+Default branch created: master
+
+3️⃣ git add demo.txt ✅
+git add demo.txt
+
+✅ What it does:
+
+Moves demo.txt to staging area
+
+Tells Git: “Track this file for the next commit”
+
+4️⃣ git commit demo.txt ❌
+git commit demo.txt
+
+❌ Why error?
+Aborting commit due to empty commit message
+
+❌ Reason:
+
+git commit does not take file name
+
+Git needs a commit message
+
+5️⃣ git commit -m ❌
+git commit -m
+
+❌ Why error?
+switch `m` requires a value
+
+❌ Reason:
+
+-m must be followed by a message
+
+6️⃣ git commit -m "add demo file" ✅
+git commit -m "add demo file"
+
+✅ What it does:
+
+Creates a commit
+
+Saves snapshot of staged files
+
+Commit ID created: a050e1b
+
+root-commit → first commit in repo
+
+7️⃣ Pasting GitHub URL alone ❌
+https://github.com/Tanish7788/Capgemini-Training7799.git
+
+❌ Why error?
+
+Terminal thinks it’s a command
+
+URLs must be used with Git commands
+
+8️⃣ git remote-v ❌
+git remote-v
+
+❌ Why error?
+
+Missing space
+
+✅ Correct:
+git remote -v
+
+9️⃣ git remote -v ✅
+git remote -v
+
+✅ Output:
+
+(empty)
+
+✅ Meaning:
+
+No remote repository connected yet
+
+🔟 git branch -M main ✅
+git branch -M main
+
+✅ What it does:
+
+Renames branch from master → main
+
+-M = force rename
+
+1️⃣1️⃣ pit push ❌
+pit push -u origin main
+
+❌ Why error?
+
+Typo → pit instead of git
+
+1️⃣2️⃣ git remote add origin ... ✅
+git remote add origin https://github.com/Tanish7788/Capgemini-Training7799
+
+✅ What it does:
+
+Connects local repo to GitHub repo
+
+origin = nickname of remote URL
+
+1️⃣3️⃣ git push origin main ❌ (First time)
+git push origin main
+
+❌ Error:
+Permission denied to Tanish888
+
+❌ Reason:
+
+GitHub account used: Tanish888
+
+Repo owner: Tanish7788
+
+No permission → 403 Forbidden
+
+1️⃣4️⃣ Second push error ❌
+Invalid username or token
+Password authentication is not supported
+
+❌ Reason:
+
+GitHub no longer allows password
+
+Requires Personal Access Token (PAT)
+
+1️⃣5️⃣ Wrong git remote set-url usage ❌
+git remote ^[[200~git remote set-url origin <NEW_URL>
+
+❌ Reason:
+
+Accidentally pasted placeholder text
+
+<NEW_URL> is not a real command
+
+1️⃣6️⃣ Correct git remote set-url ✅
+git remote set-url origin https://github.com/Tanish7788/Capgemini-Training7799
+
+✅ What it does:
+
+Updates remote URL
+
+Forces Git to re-authenticate
+
+1️⃣7️⃣ git push origin main ✅ (SUCCESS)
+git push origin main
+
+🎉 What happened:
+Writing objects...
+[new branch] main -> main
+
+✅ Meaning:
+
+Authentication succeeded
+
+Commit pushed to GitHub
+
+Local main → Remote main
+
+🧠 VIVA / INTERVIEW SUMMARY (IMPORTANT)
+🔹 git init
+
+Initializes a new Git repository.
+
+🔹 git add
+
+Adds files to staging area.
+
+🔹 git commit -m
+
+Saves staged changes with a message.
+
+🔹 git branch -M main
+
+Renames current branch to main.
+
+🔹 git remote add origin
+
+Links local repo to remote repository.
+
+🔹 git push origin main
+
+Uploads local commits to GitHub.
+
+🔹 Error 403
+
+Occurs due to wrong GitHub account or missing permission.
+
+✅ FINAL STATE
+
+✔ Local repo created
+✔ File committed
+✔ Branch renamed
+✔ Remote connected
+✔ Authentication fixed
+✔ Code successfully pushed 🎉
