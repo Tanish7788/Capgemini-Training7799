@@ -558,3 +558,6 @@ Difference between working tree / staging / commit
 How to check who changed what and when
 
 Git diagrams (very easy)
+
+
+tetig
